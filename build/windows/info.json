@@ -1,0 +1,15 @@
+{
+	"fixed": {
+		"file_version": "0.1.0"
+	},
+	"info": {
+		"0409": {
+			"ProductVersion": "0.1.0",
+			"CompanyName": "Indrajit Sahani",
+			"FileDescription": "Open-source BYOK voice dictation",
+			"LegalCopyright": "© 2026 Indrajit Sahani",
+			"ProductName": "Vocl",
+			"Comments": "Open-source BYOK voice dictation"
+		}
+	}
+}

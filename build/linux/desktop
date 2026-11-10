@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Vocl
+Comment=Open-source BYOK voice dictation
+# The Exec line includes %u to pass the URL to the application
+Exec=/usr/local/bin/vocl %u
+Terminal=false
+Type=Application
+Icon=vocl
+Categories=Utility;
+StartupWMClass=vocl
+
+ 
