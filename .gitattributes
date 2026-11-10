@@ -1,0 +1,11 @@
+# Use LF line endings in the repository and working tree on every OS
+* text=auto eol=lf
+
+# Binary files
+*.png binary
+*.ico binary
+*.icns binary
+*.car binary
+*.jpg binary
+*.ttf binary
+*.exe binary
