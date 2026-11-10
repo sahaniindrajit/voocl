@@ -1,6 +1,24 @@
 # Roadmap
 
-Windows comes first and must reach full feature parity (M1–M5) before Linux and macOS work starts. Feature numbers refer to [docs/FEATURES.md](docs/FEATURES.md).
+Windows comes first and must reach full feature parity (M1–M5) before Linux and macOS work starts. Feature numbers refer to [docs/FEATURES.md](docs/FEATURES.md), behaviour details to [docs/SPEC.md](docs/SPEC.md).
+
+## Open inputs
+
+Things only the maintainer can provide. Work that needs one of these stops until it's available.
+
+| Needed by | Input | Status |
+|---|---|---|
+| M1 end (and every milestone) | Manual testing on Windows, with feedback as issues | Ongoing |
+| M1 | OpenAI API key for the maintainer's own testing (never committed) | Pending |
+| M1 | Approval of the floating bar look (screenshot or GIF from the maintainer's test) | Pending |
+| M2 | Anthropic API key for testing | Pending |
+| M2 | Hugging Face account and mirror repo for the Parakeet model (name, revision) | Pending |
+| M4 | App icon and logo (replacing the Wails template icons) | Pending |
+| M4 | Domain for the install script and landing page (`voocl.…`) | Pending |
+| M4 | Install-ping endpoint: Cloudflare account and Worker URL | Pending |
+| M4 | Scoop bucket repository and winget submission | Pending |
+| M4 | Decision: landing page now or README only | Pending |
+| Later | Code signing (SignPath Foundation application) | Not started |
 
 ## M1: Core loop (Windows)
 

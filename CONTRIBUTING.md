@@ -6,6 +6,7 @@ Before writing code, read:
 
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): how the app is structured
 - [docs/CODING_GUIDELINES.md](docs/CODING_GUIDELINES.md): conventions
+- [docs/SPEC.md](docs/SPEC.md): exact behaviour and defaults
 - [docs/FEATURES.md](docs/FEATURES.md) and [ROADMAP.md](ROADMAP.md): what's planned
 
 ## Setup

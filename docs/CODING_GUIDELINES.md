@@ -64,7 +64,7 @@ Conventions for all code in this repository. Tooling enforces what it can (`gola
 ### Platform code
 
 - OS-specific code goes in `_windows.go`, `_linux.go`, `_darwin.go` files with the same exported API in each.
-- Platforms not implemented yet return `ErrUnsupported`.
+- Platforms not implemented yet get a `_other.go` file (`//go:build !windows`) returning `ErrUnsupported`, so every package compiles and its shared logic can be tested on any OS.
 - Keep raw syscalls in the smallest possible functions, with a comment naming the Win32 API used.
 
 ### Testing

@@ -1,6 +1,6 @@
 # Architecture
 
-This document describes how Voocl is structured and why. Read it before adding a package or moving code. Feature scope lives in [FEATURES.md](FEATURES.md), conventions in [CODING_GUIDELINES.md](CODING_GUIDELINES.md), and design decisions in [decisions/](decisions/).
+This document describes how Voocl is structured and why. Read it before adding a package or moving code. Feature scope lives in [FEATURES.md](FEATURES.md), exact behaviour and defaults in [SPEC.md](SPEC.md), conventions in [CODING_GUIDELINES.md](CODING_GUIDELINES.md), and design decisions in [decisions/](decisions/).
 
 ## Overview
 

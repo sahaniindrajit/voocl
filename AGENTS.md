@@ -8,12 +8,58 @@ Guidelines for anyone (people or tools) writing code in this repository. Follow 
 |---|---|
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How the app is structured and where code belongs |
 | [docs/CODING_GUIDELINES.md](docs/CODING_GUIDELINES.md) | Full Go and TypeScript conventions |
+| [docs/SPEC.md](docs/SPEC.md) | Exact behaviour, defaults, models, prompts and messages |
 | [docs/FEATURES.md](docs/FEATURES.md) | Feature scope and targets (v1, Win+, Later, Skip) |
 | [ROADMAP.md](ROADMAP.md) | Milestones and what to work on next |
 | [docs/decisions/](docs/decisions/) | Why key design choices were made |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Setup, branches, commits, pull requests |
 
 This file is the summary. When it and the documents above disagree, the documents above win; fix this file.
+
+## How to work in this repo
+
+### Per-item workflow
+
+1. **Pick the next unchecked item** in the current milestone of [ROADMAP.md](ROADMAP.md). Work through milestones in order and don't start the next milestone until the maintainer has tested the current one.
+2. **Read the relevant sections** of SPEC.md and ARCHITECTURE.md before writing code.
+3. **One roadmap item = one branch = one pull request.** Name the branch `feat/…`, `fix/…` or `chore/…`. Split an item into several PRs if it's large; never combine items.
+4. **Write the code with tests**, following CODING_GUIDELINES.md.
+5. **Run the checks** (see "Developing from Linux" if you're not on Windows) and fix everything they report.
+6. **Tick the item's checkbox in ROADMAP.md** in the same PR.
+7. **Open the PR** and wait for CI to pass. If CI fails, fix it. If it still fails after two attempts, stop and report.
+8. **Merging:** merge (squash) only if the maintainer has said you may merge on green CI. Otherwise leave the PR open and continue with an item that doesn't depend on it, or stop.
+9. Keep docs in sync: if a change alters setup, commands, structure or behaviour, update the relevant document in the same PR.
+
+### Developing from Linux
+
+Remote sessions usually run on Linux, but Voocl is Windows-first, and building the full app on Linux needs GTK/WebKit, which isn't installed.
+
+- **Can't run the app.** Never claim something was tested by hand. Manual testing is done by the maintainer on Windows.
+- Every package with OS-specific code must also compile on Linux: add a `_other.go` file (`//go:build !windows`) whose functions return `ErrUnsupported`, so tests for shared logic run anywhere.
+- Checks to run on Linux:
+
+  ```bash
+  wails3 generate bindings -ts                 # works on Linux
+  GOOS=windows go vet ./...                    # type-checks the Windows code paths
+  GOOS=windows golangci-lint run ./...
+  golangci-lint fmt --diff ./...
+  go test -race ./internal/...                  # core logic (services/ and main import Wails: CI only)
+  cd frontend && npm ci && npm run lint && npm run format:check && npm run typecheck && npm test && npm run build
+  ```
+
+- Packages that use cgo (audio via malgo, Parakeet via sherpa-onnx) can't be cross-compiled for Windows here. **CI on Windows is the source of truth** for them: push, then check the run with `gh run list` / `gh run view`.
+- Design OS code so the logic is testable without the OS: keep Win32 calls in thin functions behind interfaces, and test the logic with fakes.
+
+### When to stop and ask the maintainer
+
+Stop, explain what you need, and wait (or move to an independent item) when:
+
+- **A milestone is finished.** The maintainer tests it on Windows before the next milestone starts.
+- You need anything in **"Open inputs"** in ROADMAP.md (accounts, keys, URLs, design approvals).
+- SPEC.md doesn't define the **product behaviour** you need. Don't invent it.
+- You want to **add a dependency** not named in ARCHITECTURE.md, change the architecture, or change a decision in `docs/decisions/`.
+- Something requires **money, secrets, or creating external accounts or repositories**.
+- CI keeps failing after two fix attempts, or a requirement conflicts with the product principles below.
 
 ## Project
 
