@@ -2,6 +2,19 @@
 
 Guidelines for anyone (people or tools) writing code in this repository. Follow them unless a task explicitly says otherwise.
 
+## Read first
+
+| Document | Use it for |
+|---|---|
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How the app is structured and where code belongs |
+| [docs/CODING_GUIDELINES.md](docs/CODING_GUIDELINES.md) | Full Go and TypeScript conventions |
+| [docs/FEATURES.md](docs/FEATURES.md) | Feature scope and targets (v1, Win+, Later, Skip) |
+| [ROADMAP.md](ROADMAP.md) | Milestones and what to work on next |
+| [docs/decisions/](docs/decisions/) | Why key design choices were made |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Setup, branches, commits, pull requests |
+
+This file is the summary. When it and the documents above disagree, the documents above win; fix this file.
+
 ## Project
 
 Voocl is an open-source, bring-your-own-key voice dictation app for desktop. The user holds a hotkey, speaks, and cleaned-up text is pasted into the focused text field of any app.
@@ -30,11 +43,20 @@ Voocl is an open-source, bring-your-own-key voice dictation app for desktop. The
 wails3 dev                      # run with hot reload
 wails3 build                    # production build into bin/
 wails3 generate bindings -ts    # regenerate Go → TS bindings
-go vet ./... && go test ./...   # Go checks
-cd frontend && npm run build    # type-check + build the UI
+
+go vet ./...
+golangci-lint run
+go test -race ./...
+
+cd frontend
+npm run lint                    # ESLint
+npm run format:check            # Prettier
+npm run typecheck
+npm test                        # vitest
+npm run build
 ```
 
-Before finishing any change: run `go vet ./...`, `go test ./...` and `npm run build`, and make sure all of them pass.
+Before finishing any change, run all of the checks above and make sure they pass. CI runs the same checks.
 
 ## Product principles
 

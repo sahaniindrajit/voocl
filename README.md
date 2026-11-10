@@ -18,6 +18,10 @@ Tools like Wispr Flow and Typeless are great, but they're subscriptions, and the
 - Local history, nothing stored in the cloud
 - Lightweight: lives in the tray, no window running when idle
 
+## Roadmap
+
+Windows reaches full feature parity first, then Linux, then macOS. See [ROADMAP.md](ROADMAP.md) and the full feature list in [docs/FEATURES.md](docs/FEATURES.md).
+
 ## Tech stack
 
 - [Go](https://go.dev) core
@@ -26,7 +30,7 @@ Tools like Wispr Flow and Typeless are great, but they're subscriptions, and the
 
 ## Development
 
-**Prerequisites:** Go 1.26+, Node.js 20+, and the Wails CLI:
+**Prerequisites:** Go 1.26+, Node.js 22+, and the Wails CLI:
 
 ```bash
 go install github.com/wailsapp/wails/v3/cmd/wails3@v3.0.0
@@ -46,6 +50,8 @@ wails3 build
 ```
 
 The output goes to `bin/`.
+
+Before contributing, read [CONTRIBUTING.md](CONTRIBUTING.md), [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/CODING_GUIDELINES.md](docs/CODING_GUIDELINES.md).
 
 ## Privacy
 
