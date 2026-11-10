@@ -3,7 +3,7 @@
 #
 # The lines below are called `modelines`. See `:help modeline`
 
-name: "vocl"
+name: "voocl"
 arch: ${GOARCH}
 platform: "linux"
 version: "0.1.0"
@@ -17,12 +17,12 @@ license: "MIT"
 release: "1"
 
 contents:
-  - src: "./bin/vocl"
-    dst: "/usr/local/bin/vocl"
+  - src: "./bin/voocl"
+    dst: "/usr/local/bin/voocl"
   - src: "./build/appicon.png"
-    dst: "/usr/share/icons/hicolor/128x128/apps/vocl.png"
-  - src: "./build/linux/vocl.desktop"
-    dst: "/usr/share/applications/vocl.desktop"
+    dst: "/usr/share/icons/hicolor/128x128/apps/voocl.png"
+  - src: "./build/linux/voocl.desktop"
+    dst: "/usr/share/applications/voocl.desktop"
 
 # Default dependencies for the GTK4 + WebKitGTK 6.0 stack (Ubuntu 24.04+ / Debian 13+)
 depends:

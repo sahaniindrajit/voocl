@@ -35,7 +35,7 @@ func main() {
 	// 'Bind' is a list of Go struct instances. The frontend has access to the methods of these instances.
 	// 'Mac' options tailor the application when running an macOS.
 	app := application.New(application.Options{
-		Name:        "Vocl",
+		Name:        "Voocl",
 		Description: "Open-source BYOK voice dictation",
 		Services: []application.Service{
 			application.NewService(&GreetService{}),
@@ -54,7 +54,7 @@ func main() {
 	// 'BackgroundColour' is the background colour of the window.
 	// 'URL' is the URL that will be loaded into the webview.
 	app.Window.NewWithOptions(application.WebviewWindowOptions{
-		Title: "Vocl",
+		Title: "Voocl",
 		// Window sized to the golden ratio (1000 / 618 ≈ 1.618).
 		Width:  1000,
 		Height: 618,

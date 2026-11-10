@@ -1,12 +1,12 @@
-# Vocl
+# Voocl
 
 **Open-source, bring-your-own-key voice dictation.** Hold a hotkey, speak, and clean text is pasted into whatever app you're using. No subscription, no word limits — you pay your AI provider directly, or run everything locally for free.
 
 > **Status:** early development. Windows first, then Linux, then macOS.
 
-## Why Vocl
+## Why Voocl
 
-Tools like Wispr Flow and Typeless are great, but they're subscriptions, and the ones that let you bring your own API key usually put it behind a paid plan. Vocl is free and open source: plug in your own key and pay only for what you actually use.
+Tools like Wispr Flow and Typeless are great, but they're subscriptions, and the ones that let you bring your own API key usually put it behind a paid plan. Voocl is free and open source: plug in your own key and pay only for what you actually use.
 
 ## Planned features
 

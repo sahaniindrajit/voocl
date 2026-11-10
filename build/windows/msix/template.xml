@@ -8,13 +8,13 @@
         AllowPromptForPassword="false">
     </Settings>
     <Installer
-        Path="vocl"
+        Path="voocl"
         Arguments=""
-        InstallLocation="C:\Program Files\Indrajit Sahani\Vocl">
+        InstallLocation="C:\Program Files\Indrajit Sahani\Voocl">
     </Installer>
     <PackageInformation
-        PackageName="Vocl"
-        PackageDisplayName="Vocl"
+        PackageName="Voocl"
+        PackageDisplayName="Voocl"
         PublisherName="CN=Indrajit Sahani"
         PublisherDisplayName="Indrajit Sahani"
         Version="0.1.0.0"
@@ -25,10 +25,10 @@
         </Capabilities>
         <Applications>
             <Application
-                Id="com.sahaniindrajit.vocl"
+                Id="com.sahaniindrajit.voocl"
                 Description="Open-source BYOK voice dictation"
-                DisplayName="Vocl"
-                ExecutableName="vocl"
+                DisplayName="Voocl"
+                ExecutableName="voocl"
                 EntryPoint="Windows.FullTrustApplication">
                 
             </Application>
@@ -41,13 +41,13 @@
         </Dependencies>
         <Properties>
             <Framework>false</Framework>
-            <DisplayName>Vocl</DisplayName>
+            <DisplayName>Voocl</DisplayName>
             <PublisherDisplayName>Indrajit Sahani</PublisherDisplayName>
             <Description>Open-source BYOK voice dictation</Description>
             <Logo>Assets\AppIcon.png</Logo>
         </Properties>
     </PackageInformation>
-    <SaveLocation PackagePath="vocl.msix" />
+    <SaveLocation PackagePath="voocl.msix" />
     <PackageIntegrity>
         <CertificatePath></CertificatePath>
     </PackageIntegrity>

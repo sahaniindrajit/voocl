@@ -5,13 +5,13 @@
 !include "FileFunc.nsh"
 
 !ifndef INFO_PROJECTNAME
-    !define INFO_PROJECTNAME "vocl"
+    !define INFO_PROJECTNAME "voocl"
 !endif
 !ifndef INFO_COMPANYNAME
     !define INFO_COMPANYNAME "Indrajit Sahani"
 !endif
 !ifndef INFO_PRODUCTNAME
-    !define INFO_PRODUCTNAME "Vocl"
+    !define INFO_PRODUCTNAME "Voocl"
 !endif
 !ifndef INFO_PRODUCTVERSION
     !define INFO_PRODUCTVERSION "0.1.0"

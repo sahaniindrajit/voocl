@@ -1,4 +1,4 @@
-module github.com/sahaniindrajit/vocl
+module github.com/sahaniindrajit/voocl
 
 go 1.26.0
 

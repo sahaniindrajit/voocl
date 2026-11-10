@@ -8,13 +8,13 @@
   IgnorableNamespaces="uap3">
   
   <Identity 
-    Name="com.sahaniindrajit.vocl"
+    Name="com.sahaniindrajit.voocl"
     Publisher="CN=Indrajit Sahani"
     Version="0.1.0.0" 
     ProcessorArchitecture="x64" />
   
   <Properties>
-    <DisplayName>Vocl</DisplayName>
+    <DisplayName>Voocl</DisplayName>
     <PublisherDisplayName>Indrajit Sahani</PublisherDisplayName>
     <Description>Open-source BYOK voice dictation</Description>
     <Logo>Assets\StoreLogo.png</Logo>
@@ -29,9 +29,9 @@
   </Resources>
   
   <Applications>
-    <Application Id="com.sahaniindrajit.vocl" Executable="vocl" EntryPoint="Windows.FullTrustApplication">
+    <Application Id="com.sahaniindrajit.voocl" Executable="voocl" EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
-        DisplayName="Vocl"
+        DisplayName="Voocl"
         Description="Open-source BYOK voice dictation"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
@@ -41,7 +41,7 @@
       </uap:VisualElements>
       
       <Extensions>
-        <desktop:Extension Category="windows.fullTrustProcess" Executable="vocl" />
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="voocl" />
         
         
       </Extensions>

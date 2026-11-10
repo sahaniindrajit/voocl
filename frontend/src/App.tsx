@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import {Events, WML} from "@wailsio/runtime";
-import {GreetService} from "../bindings/github.com/sahaniindrajit/vocl";
+import {GreetService} from "../bindings/github.com/sahaniindrajit/voocl";
 
 // Show the actual Wails version this project was generated against.
 const wailsVersion = "v3.0.0";
