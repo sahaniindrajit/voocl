@@ -1,0 +1,57 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  default: standard # errcheck, govet, ineffassign, staticcheck, unused
+  enable:
+    - bodyclose
+    - contextcheck
+    - errorlint
+    - gocritic
+    - gosec
+    - misspell
+    - noctx
+    - nolintlint
+    - revive
+    - unconvert
+    - unparam
+  settings:
+    misspell:
+      locale: US
+      ignore-rules:
+        - colour # Wails APIs use British spelling (BackgroundColour)
+    nolintlint:
+      require-explanation: true
+      require-specific: true
+    revive:
+      rules:
+        - name: exported
+        - name: package-comments
+        - name: error-strings
+        - name: error-naming
+        - name: receiver-naming
+        - name: var-naming
+        - name: indent-error-flow
+        - name: early-return
+        - name: context-as-argument
+  exclusions:
+    presets:
+      - std-error-handling
+    paths:
+      - frontend
+      - build
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/sahaniindrajit/voocl
+  exclusions:
+    paths:
+      - frontend
+      - build

@@ -18,8 +18,9 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": false,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "bindings"],
+  "include": ["src", "bindings", "vite.config.ts", "vitest.config.ts"]
 }

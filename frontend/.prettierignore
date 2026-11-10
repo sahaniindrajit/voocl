@@ -1,0 +1,11 @@
+dist
+bindings
+node_modules
+package-lock.json
+src/components/ui
+
+# Wails template files, formatted when replaced in M1 (see ROADMAP.md)
+index.html
+public
+src/App.tsx
+src/main.tsx
