@@ -25,7 +25,7 @@ Things only the maintainer can provide. Work that needs one of these stops until
 Hold a key, speak, get text pasted.
 
 - [x] Remove the Wails template demo and its lint/format exclusions (`frontend/eslint.config.js`, `frontend/.prettierignore`)
-- [ ] Settings file with defaults and versioning
+- [x] Settings file with defaults and versioning
 - [ ] Global hotkeys via low-level keyboard hook: push-to-talk, hands-free, lock, cancel, short-tap ignore (#1–6)
 - [ ] Microphone capture, 16 kHz mono, in memory
 - [ ] Session state machine with tests
