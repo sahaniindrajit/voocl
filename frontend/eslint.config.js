@@ -6,14 +6,7 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: [
-      "dist",
-      "bindings",
-      "node_modules",
-      "src/components/ui",
-      // Wails template demo, removed in M1 (see ROADMAP.md)
-      "src/App.tsx",
-    ],
+    ignores: ["dist", "bindings", "node_modules", "src/components/ui"],
   },
   {
     files: ["**/*.{ts,tsx}"],
