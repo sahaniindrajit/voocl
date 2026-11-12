@@ -36,6 +36,7 @@ Remote sessions usually run on Linux, but Voocl is Windows-first, and building t
 
 - **Can't run the app.** Never claim something was tested by hand. Manual testing is done by the maintainer on Windows.
 - Every package with OS-specific code must also compile on Linux: add a `_other.go` file (`//go:build !windows`) whose functions return `ErrUnsupported`, so tests for shared logic run anywhere.
+- Install the Wails CLI without cgo, since GTK isn't available: `CGO_ENABLED=0 go install github.com/wailsapp/wails/v3/cmd/wails3@v3.0.0`.
 - Checks to run on Linux:
 
   ```bash
