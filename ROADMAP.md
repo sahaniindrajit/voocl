@@ -28,7 +28,7 @@ Hold a key, speak, get text pasted.
 - [x] Settings file with defaults and versioning
 - [ ] Global hotkeys via low-level keyboard hook: push-to-talk, hands-free, lock, cancel, short-tap ignore (#1–6)
 - [ ] Microphone capture, 16 kHz mono, in memory
-- [ ] Session state machine with tests
+- [x] Session state machine with tests
 - [ ] OpenAI transcription
 - [ ] Paste with clipboard save/restore, paste last, copy last, clipboard fallback (#12–15)
 - [ ] Native floating bar overlay (#35)

@@ -58,7 +58,8 @@ Rules:
 - A push-to-talk press shorter than 0.5 s returns to `Idle` without sending anything.
 - `Space` while holding push-to-talk switches to hands-free.
 - `Esc` in any active state cancels and discards everything.
-- On transcription failure, the last recording is kept in memory so the user can retry. It is dropped on the next recording or on exit.
+- On transcription failure, the last recording is kept in memory so the user can retry. It is dropped on the next successful recording, on dismiss, or on exit (see SPEC.md §3).
+- Slow steps (transcribe, clean, paste) run in worker goroutines owned by the session. Their results come back as events, and results from a cancelled dictation are ignored.
 - Each state change is published as an event for the overlay and the UI.
 
 ## Provider modes
@@ -111,6 +112,7 @@ voocl/
 │   ├── keystore/           # API keys in the OS keyring
 │   ├── localmodel/         # model download, checksum, load/unload lifecycle
 │   ├── telemetry/          # anonymous install ping
+│   ├── clock/              # time abstraction, with a fake for tests
 │   └── logging/            # slog setup, rotating file
 ├── services/               # thin services bound to the UI by Wails
 ├── frontend/src/

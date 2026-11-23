@@ -44,12 +44,23 @@ Behaviour:
 - Modifier-only shortcuts must not leave stuck keys in the target app (e.g. `Alt` opening a menu bar). Swallow or neutralise them as needed.
 - When the user sets a shortcut that Windows or a known app already uses, show a warning but allow it.
 
+While a dictation is being processed (transcribing, cleaning up or pasting):
+
+- Push-to-talk, hands-free, Retry and Paste/Copy last are ignored until it finishes or is cancelled.
+- `Esc` cancels transcription or cleanup. A paste already in progress can't be cancelled: it takes a moment, and stopping halfway could leave the clipboard unrestored.
+
+Other rules:
+
+- Only hands-free recordings have the 5-minute cap. After locking push-to-talk into hands-free, the cap counts from when the recording started.
+- If the transcript or the cleaned text is empty, nothing is pasted and no error is shown.
+- Paste last and Copy last work only while idle.
+
 ## 3. Audio
 
 - Default system microphone unless the user picked one. If the picked device is missing, fall back to the default device and notify the user.
 - Capture 16 kHz, mono, 16-bit PCM, in memory only.
 - Discard recordings under 0.5 s or containing only silence (peak level below a threshold), with no request sent and no error shown.
-- Keep the **last failed recording** in memory for Retry. Drop it on the next successful recording, when the user dismisses it, or on exit.
+- Keep the **last failed recording** in memory for Retry. Drop it on the next successful recording, when the user dismisses it, when the user cancels its retry, or on exit. A new recording that fails replaces it; one that is cancelled or too short doesn't affect it.
 
 ## 4. Transcription
 
