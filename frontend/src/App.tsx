@@ -1,6 +1,6 @@
 function App() {
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <main>
       <h1>Voocl</h1>
       <p>Voocl is running. Settings will appear here.</p>
     </main>
