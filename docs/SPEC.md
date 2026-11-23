@@ -171,6 +171,10 @@ Stored in `%APPDATA%\Voocl\settings.json`. Missing fields take defaults; unknown
 ```
 
 - `mode` defaults to `local`, and first-run setup changes it when the user adds a key.
+- A value outside the allowed set (unknown `mode` or `style`, retention under 1 day) is replaced with its default when loading.
+- If the file isn't valid JSON, the app starts with defaults and logs the problem. The broken file is replaced on the next save.
+- A file from a newer version of Voocl is read as far as possible. Saving writes the current version.
+- Saves write a temporary file and rename it over `settings.json`, so a crash never leaves a half-written file.
 - API keys are **never** in this file. They live in Windows Credential Manager under the service name `Voocl` with accounts `openai` and `anthropic`.
 
 ## 11. Errors
