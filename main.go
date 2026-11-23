@@ -27,7 +27,9 @@ func main() {
 		Title:  "Voocl",
 		Width:  480,
 		Height: 320,
-		URL:    "/",
+		// Without a colour the window is black, hiding the page's black text.
+		BackgroundColour: application.NewRGB(255, 255, 255),
+		URL:              "/",
 	})
 
 	if err := app.Run(); err != nil {
